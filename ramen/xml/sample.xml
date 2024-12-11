@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Data>
+	<Title>降水確率</Title>
+	<Item>
+		<Text>今日</Text>
+		<Value>50</Value>
+	</Item>
+	<Item>
+		<Text>明日</Text>
+		<Value>65</Value>
+	</Item>
+	<Item>
+		<Text>明後日</Text>
+		<Value>87</Value>
+	</Item>
+</Data>

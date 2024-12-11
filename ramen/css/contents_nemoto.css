@@ -1,0 +1,206 @@
+html{
+	min-height: 100%;
+}
+
+body{
+	width:100%;
+	overflow:hidden;
+}
+
+img{
+    /*画像の幅を100%に設定*/
+    width:100%;
+    height:auto;
+
+  }
+p{
+    font-family: 'Yu Gothic';
+}
+#header{
+    /*画像の幅を100%に設定*/
+    position: absolute;
+    width:100%;
+    height:auto;
+    z-index: 1;
+}
+
+.amount_of_loss{
+    position: absolute;
+    font-size: 1000%;
+    color: red;
+    font-weight: bold;
+    top: 12%;
+    left: 31%;
+    width: auto;
+    height: auto;
+    z-index: 2;
+
+}
+.amount_of_loss span.black{
+    position: absolute;
+    font-size: 50%;
+    color: black;
+    top: 32%;
+    left: 376px;
+}
+.amount_of_loss span.blue{
+    position: absolute;
+    font-size: 66%;
+    color: blue;
+    top: 26%;
+    left: 120%;
+}
+#yesterday_loss{
+    position: absolute;
+    font-size: 550%;
+    color: black;
+    font-weight: bold;
+    top: 18%;
+    left: 4%;
+    z-index: 3;
+}
+#thankyou{
+    position: absolute;
+    font-size: 550%;
+    color: black;
+    font-weight: bold;
+    top: 55%;
+    left: 32%;
+    z-index: 4;
+    text-align: center;
+}
+#arrow{
+    position: absolute;
+    width: 5%;
+    top: 34%;
+    left: 69%;
+    z-index: 5;
+}
+#fami_eco{
+    position: absolute;
+    width: 15%;
+    top: 51%;
+    left: 29%;
+    height: 21%;
+    z-index: 6;
+    transform: rotate(-15deg);
+}
+.hoge-box {
+    position: absolute;
+    width: 250px;
+    top: 44%;
+    left: 9%;
+    height: 17%;
+    text-align: center;
+    opacity: 0; /* 初期状態では非表示 */
+    visibility: hidden; /* 初期状態では非表示 */
+    animation: late-open 2s ease-in 5s forwards; /* `.bage-box`アニメーションが終わった後に表示 */
+    background-color: rgb(131, 223, 131);
+    z-index: 7;
+}
+
+.bage-box {
+    position: absolute;
+    width: 250px;
+    top: 49%;
+    left: 9%;
+    height: 38%;
+    text-align: center;
+    background-color: rgb(144, 151, 144);
+    z-index: 8;
+    animation: scale-anime 5s linear forwards; /* アニメーションの終了に合わせて高さが変わる */
+    transform-origin: 0% 100%;
+}
+
+@keyframes scale-anime {
+    0% {
+        transform: scaleY(0%);
+    }
+    50% {
+        transform: scaleY(100%);
+    }
+    100% {
+        transform: scaleY(80%);
+    }
+}
+
+@keyframes late-open {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/*
+.hoge-box {
+    position: absolute;
+    width: 250px;
+    top: 44%;
+    left: 9%;
+    height: 17%;
+    text-align: center;
+    display: none;
+    animation: late-open 2s ease-in 0.1s forwards;
+    background-color: rgb(131, 223, 131);
+    z-index: 7;
+    
+  }
+  .bage-box {
+    position: absolute;
+    width: 250px;
+    top: 49%;
+    left: 9%;
+    height: 38%;
+    text-align: center;
+    display: block;
+    background-color: rgb(144, 151, 144);
+    z-index: 8;
+    transition: height 0.5s ease-out;
+    animation: scale-anime 5s linear forwards;
+    transform-origin:0% 100%
+  }
+  @keyframes scale-anime{
+    0%{
+        transform: scaleY(0%);
+    }
+    50%{
+        transform: scaleY(100%);
+    }
+    100%{
+        transform: scaleY(80%);
+    }
+  }
+
+
+  @keyframes late-open {
+    to {
+      display: block;
+    }
+  }
+
+
+
+
+
+
+/*#container{
+	position:relative;
+	width:100%;
+	min-width:1920px;
+	min-height:1080px;
+	text-align:left;
+	padding:150px;
+	background:url('ftp://103.4.12.56/var/www/html/ramen/images/らーめんず画面構想案.png') no-repeat;
+
+}
+.detail{
+    position: absolute;
+    top: 85px;
+    left: 900px;
+    width: 900px;
+    height: 850px;
+}

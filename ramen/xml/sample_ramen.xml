@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <Products comment="商品情報">
+        <Product>
+            <comment>目玉商品</comment>
+            <name>スパイス香る！​キーマカレーおむすび</name>
+            <from>国産</from>
+            <image>images/omusubi.jpg</image>
+            <price>
+                <original>149</original>
+                <discount>119</discount>
+            </price>
+            <sellByDate>2014-10-10T13:50:40+09:00</sellByDate>
+            <size>100</size>
+            <unit>g</unit>
+        </Product>
+        <Product>
+            <comment>おすすめ！</comment>
+            <name>牛丼ラーメン</name>
+            <from>らーめんず</from>
+            <image>images/omusubi.jpg</image>
+            <price>
+                <original>149</original>
+                <discount>119</discount>
+            </price>
+            <sellByDate>2014-10-10T13:50:40+09:00</sellByDate>
+            <size>1</size>
+            <unit>人前</unit>
+        </Product>
+    </Products>
+    <Disposal comment="前日の廃棄量グラム">
+        <gram category="disposal">1000</gram>
+        <gram category="sold">200</gram>
+    </Disposal>																				
+</data>

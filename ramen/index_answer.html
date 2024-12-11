@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>sample</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Expires" content="86400">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="css/contents.css">
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <style>
+            html{
+                min-height: 100%;
+            }
+            body{
+                width    : 100%;
+                margin   : 0;
+                overflow : hidden;
+            }
+            #container{
+                position   : relative;
+                width      : 100%;
+                min-width  : 1920px;
+                min-height : 1080px;
+                padding    : 0;
+            }
+        </style>
+        <script>
+            //読み込みたいデータの参照先URL
+  	        var server_url = 'xml/' + 'sample' +'.xml';
+
+            //データの読み込みと反映
+            function DataLoad(){
+                //var title = "";                 //タイトル格納先変数
+                //var text_array = new Array(3);  //text格納先配列
+                //var value_array = new Array(3); //value格納先配列
+
+                //XML読み込み
+                $.ajax({
+                    url     :server_url,//読み込みデータ参照先URL
+                    type    :"get",     //HTTP通信の種類
+                    async   :true,
+                    cache   :false,
+                    dataType:"xml",     //ファイルタイプ
+
+                    //読み込み成功時処理
+                    success: function(xml){
+                        var title = "";                 //タイトル格納先変数
+                        var text_array = new Array(3);  //text格納先配列
+                        var value_array = new Array(3); //value格納先配列
+
+                        $(xml).find("Data").each(
+                            function(){
+                                title = $(this).find("Title").text();
+                                var cnt = 0;
+                                $(this).find("Item").each(function(){
+                                    text_array[cnt] = $(this).find("Text").text();
+                                    value_array[cnt] = $(this).find("Value").text();
+                                    cnt++;
+                                });
+                            }
+                        );
+
+                        //読み込んだデータをHTMLに成形
+                        $('#title').html(title);
+                        for(var i = 0; i < 3; i++){
+                            $('.text' + i).html( text_array[i]);
+                            $('.value' + i).html( value_array[i]);
+                        }
+                    },
+                    //読み込み失敗時処理
+                    error: function(e){
+                        $('#title').html("error");
+                    }
+                });
+            }
+
+            //初めに実行される
+            window.onload = function(){
+                DataLoad();
+            };
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="detail">
+                <h1 id="title"></h1>
+                <div id="item0">
+                    <p class="text0"></p>
+                    <p class="value0"></p>
+                </div>
+                <div id="item1">
+                    <p class="text1"></p>
+                    <p class="value1"></p>
+                </div>
+                <div id="item2">
+                    <p class="text2"></p>
+                    <p class="value2"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
